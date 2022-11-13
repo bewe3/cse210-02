@@ -96,7 +96,11 @@ value = random.randint(2, 12)
 suit = random.randint(0, 3)
 
 # initialize score
-score = 300
+score = 0
+
+# initialize first card, can't be lowest or highest card
+value = random.randint(2, 12)
+suit = random.randint(0, 3)
 
 # initialize keepGoing
 keepGoing = 0
@@ -109,6 +113,10 @@ print(" ⌘ If you guess correctly, your score increases by 100.")
 print(" ⌘ If you guess incorrectly, your score decreases by 75.\n")
 print("Ready to begin? [Y/N]")
 start = input(">>> ")
+
+#set the score only if the user is ready to play
+if start.lower() == "y":
+    score = 300
 
 # if score > 0, keep going, else game over
 while score > 0:
